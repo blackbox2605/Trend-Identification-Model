@@ -1,16 +1,5 @@
 # Trend Identification Model
 
-## Table of Contents
-- [Overview](#overview)
-- [Objective](#objective)
-- [Procedure](#procedure)
-  - [Data Collection](#data-collection)
-  - [Semantic Segmentation](#semantic-segmentation)
-  - [Attribute Recognition](#attribute-recognition)
-- [Results](#results)
-- [Technologies Used](#technologies-used)
-- [References](#references)
-
 ## Overview
 The fast fashion industry has drastically increased the rate at which new trends emerge. Companies often replicate luxury products at affordable prices, making it challenging for consumers to choose from a vast array of options. This challenge is further compounded by the lack of physical interaction with products in online shopping, making it difficult to select apparel without trying it on.
 
