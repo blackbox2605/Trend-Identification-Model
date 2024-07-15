@@ -45,4 +45,5 @@ The final output includes a list of trending colors and attributes for users to 
 - [Semantic Segmentation Model](https://github.com/manas3858/iMat-Fashion/)
 - [Starter Kernel for iMaterialist (Kaggle)](https://www.kaggle.com/ramswaroopbhakar14/training-inception-v3-for-fashion-attributes)
 
+run app.py to run it on local host <br>
 By integrating these technologies, we aim to enhance the user's shopping experience by offering personalized and trend-based recommendations.
