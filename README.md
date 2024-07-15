@@ -1,101 +1,59 @@
-# TREND IDENTIFICATION MODEL
+# Trend Identification Model
+
 ## Table of Contents
-- [Overview](#Overview)
-- [Objective](#Objective)
-- [Procedure](#Procedure)
-     *  [Data Cllection](#Data-Collection)
-     *  [Semantic Segmentation](#Semantic-Segmentation)
-     *  [Attribute Recognition](#Attribute-Recognition)
-- [Results](#Results)
-- [Technologies Used](#Technologies-Used)
+- [Overview](#overview)
+- [Objective](#objective)
+- [Procedure](#procedure)
+  - [Data Collection](#data-collection)
+  - [Semantic Segmentation](#semantic-segmentation)
+  - [Attribute Recognition](#attribute-recognition)
+- [Results](#results)
+- [Technologies Used](#technologies-used)
+- [References](#references)
 
 ## Overview
-Fast fashion has caused a massive increase in the rate at which new trends are set.
+The fast fashion industry has drastically increased the rate at which new trends emerge. Companies often replicate luxury products at affordable prices, making it challenging for consumers to choose from a vast array of options. This challenge is further compounded by the lack of physical interaction with products in online shopping, making it difficult to select apparel without trying it on.
 
-A lot of companies make replica of luxury products at an affordable price. 
-
-As a result it is getting difficult for the average consumer to select apparels from such a vast variety. 
-
-The problem is further elevated by the lack of interaction with the product which exists in traditional shopping, since it is difficult to choose a apparel without trial.
 ## Objective
-With the rise of fast fashion, it is difficult to keep track of ever changing trends. 
+With the rapid pace of fast fashion, keeping track of ever-changing trends is challenging. Our model aims to streamline the shopping experience on Myntra by filtering products based on the latest trends, effectively serving as a personal, budget-friendly stylist for each user.
 
-A model that would help the user filter the products based on the latest trends will make the shopping experience a lot smoother and give Myntra an edge over other e-commerce sites.
+## Procedure
 
-Our model detects the latest trends in the market to help the user make the right choice. It would serve as each individual’s own personal, low budget stylist. 
+### Data Collection
 
-### Trend Prediction
-
-1. The first step includes collecting images from the popular social media site - Instagram.
-
-- An account following some of the most famous fashion influencers of today is created.
-
-- Instagram's algorithm ensures that the feed consists of posts in a descending order according to popularity.
-
-- Making use of this feature of Instagram, a model - instagram_scraper1.py is created.
-
- The scraper model ( instagram_scraper1.py ) outputs -`profile.txt `,  `profiles.csv ` and  `datetime.csv `
- 
- This shows us a detailed list of the profile names and the respective time stamps of posts appearing on the feed.
- 
-2. Next, run `syntax.txt`
+1. **Instagram Scraping**: 
+   - We created an Instagram account following top fashion influencers.
+   - Instagram's algorithm prioritizes popular posts in the feed.
+   - Using this feature, we developed `instagram_scraper1.py`, which outputs `profile.txt`, `profiles.csv`, and `datetime.csv`, detailing profile names and timestamps of posts.
    
-> This downloads all the images after the particular latest time stamp. 
+2. **Image Downloading**:
+   - Run `syntax.txt` to download images posted after a specified timestamp, stored in `time.txt`.
+   - The images are saved in a designated folder.
+   - Execute `saveimages.py` to provide `profile.txt` to our software, which downloads images with custom timestamps and saves them in the required directory.
 
-> time.txt contains the timestamps after which the images need to be downloaded.
-
-> A folder containing all such images is created.
-
-3. Run the notebook `saveimages.py` 
-
-> This provides profile.txt to an open source software used by us, which downloads the images with the required custom time stamp with and saves them in a required directory.
-
-This completes the creation of basic dataset required for further steps.
+This process creates the foundational dataset for subsequent steps.
 
 ### Semantic Segmentation
-
-Due to the time constraints we decided to use COCO_weights to pretrain our Mask-RCNN model and then fine tune it on around 40,000 images from I-Materialist Dataset which is available on kaggle.
-We used the matterpost implementation of Mask-RCNN.
-The output of this step is a segmentation mask which is used to isolate the apparel from its surrounding.
+Due to time constraints, we used COCO weights to pre-train our Mask-RCNN model, fine-tuning it on approximately 40,000 images from the I-Materialist Dataset on Kaggle. We utilized the Matterport implementation of Mask-RCNN, producing segmentation masks to isolate apparel from backgrounds.
 
 ### Attribute Recognition
+- **Model**: An encoder-decoder model is employed, with InceptionV3 as the encoder and an LSTM-based model as the decoder.
+- **Process**: Masks are fed into this model, generating a feature vector that is decoded to identify attributes.
+- **Color Detection**: K-Means Clustering is used to detect colors.
 
-- An encoder-decoder model is used, the encoder being InceptionV3 model and decoder an LSTM-based model.
-
-- The masks are fed to this model. A feature vector is generated which is decoded to get the attributes.
-
-- K-Means Clustering is used for colour detection.
-
-The final output of this prototype includes a list of the most trending colours and attributes for the user to choose from.
-
-This model was used to predict attributes on our dataset and an interactive website is created by deploying the model using Flask.
-The website allows the user to filter the products based on few of these attributes.
-
-
-
-## Results
-
-A few examples of images obtained using the Mask-RCNN model for semantic segmentation are given below:
-
-A few examples of images obtained after attribute detection using the encoder-decoder model are given below:
-
-<img src="https://user-images.githubusercontent.com/73772990/97812178-04246480-1c99-11eb-9491-b197723298f4.png" width="300"/>
-<img src="https://user-images.githubusercontent.com/73772990/97812186-1b635200-1c99-11eb-9516-89180386e398.png" width="250"/>
-<img src="https://user-images.githubusercontent.com/73772990/97812213-3e8e0180-1c99-11eb-82c8-305423a40919.png" width="300"/>
-
-
+The final output includes a list of trending colors and attributes for users to choose from. We deployed this model using Flask to create an interactive website, allowing users to filter products based on these attributes.
 
 ## Technologies Used
-
-<li>python</li>
-<li>OpenCV</li>
-<li>Flask</li>
-<li>SQL</li>
-<li>Jupyter</li>
-
+- Python
+- OpenCV
+- Flask
+- SQL
+- Jupyter
 
 ## References
-Mask-RCNN original paper       : https://arxiv.org/abs/1703.06870
-Matterpost implementation      : https://github.com/matterport/Mask_RCNN
-Semantic segmentation model    : https://github.com/manas3858/iMat-Fashion/
-Starter kernel for imat(Kaggle): https://www.kaggle.com/ramswaroopbhakar14/training-inception-v3-for-fashion-attributes
+- [Mask-RCNN Original Paper](https://arxiv.org/abs/1703.06870)
+- [Matterport Implementation](https://github.com/matterport/Mask_RCNN)
+- [Semantic Segmentation Model](https://github.com/manas3858/iMat-Fashion/)
+- [Starter Kernel for iMaterialist (Kaggle)](https://www.kaggle.com/ramswaroopbhakar14/training-inception-v3-for-fashion-attributes)
+
+By integrating these technologies, we aim to enhance the user's shopping experience by offering personalized and trend-based recommendations.
