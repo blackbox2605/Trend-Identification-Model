@@ -1,7 +1,7 @@
 # Trend Identification Model
 
 ## Overview
-The fast fashion industry has drastically increased the rate at which new trends emerge. Companies often replicate luxury products at affordable prices, making it challenging for consumers to choose from a vast array of options. This challenge is further compounded by the lack of physical interaction with products in online shopping, making it difficult to select apparel without trying it on.
+The fast fashion industry has drastically increased the rate at which new trends emerge. Companies often replicate luxury products at affordable prices, making it challenging for consumers to choose from a vast array of options. This challenge is further compounded by the lack of physical interaction with products in online shopping, making it difficult to select apparel without trying it on.We also made a graphical representation of  the dynamic trends . This helps in noticing changes in trends over a particular period of time.
 
 ## Objective
 With the rapid pace of fast fashion, keeping track of ever-changing trends is challenging. Our model aims to streamline the shopping experience on Myntra by filtering products based on the latest trends, effectively serving as a personal, budget-friendly stylist for each user.
