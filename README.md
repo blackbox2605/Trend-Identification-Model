@@ -38,10 +38,8 @@ Our model detects the latest trends in the market to help the user make the righ
  
  This shows us a detailed list of the profile names and the respective time stamps of posts appearing on the feed.
  
-2. Next, run `syntax.txt` i.e. 
-
-`instagram-scraper -f profile.txt -u perc.eptrons -p Myntra2020 --template {datetime}--latest-stamps time.txt`
-in the command line.
+2. Next, run `syntax.txt`
+   
 > This downloads all the images after the particular latest time stamp. 
 
 > time.txt contains the timestamps after which the images need to be downloaded.
