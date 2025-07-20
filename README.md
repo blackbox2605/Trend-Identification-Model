@@ -1,5 +1,11 @@
 # Trend Identification Model
 
+[![Watch Demo Video]([https://img.shields.io/badge/Watch-Demo%20Video-red)](https://your-video-link.com](https://drive.google.com/file/d/1-rKwdTFuwlni9rzQ3o64lPMJfUo7N33z/view?usp=drive_web ))
+
+A computer vision and deep learning-based model to detect and track fashion trends from social media and provide real-time, personalized recommendations to users on platforms like Myntra.
+
+---
+
 ## Overview
 The fast fashion industry has drastically increased the rate at which new trends emerge. Companies often replicate luxury products at affordable prices, making it challenging for consumers to choose from a vast array of options. This challenge is further compounded by the lack of physical interaction with products in online shopping, making it difficult to select apparel without trying it on.We also made a graphical representation of  the dynamic trends . This helps in noticing changes in trends over a particular period of time.
 
