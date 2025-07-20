@@ -1,6 +1,6 @@
 # Trend Identification Model
 
-[![Watch Demo Video](https://drive.google.com/file/d/1-rKwdTFuwlni9rzQ3o64lPMJfUo7N33z/view)
+[![Watch Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red)](https://drive.google.com/file/d/1-rKwdTFuwlni9rzQ3o64lPMJfUo7N33z/view)
 
 A computer vision and deep learning-based model to detect and track fashion trends from social media and provide real-time, personalized recommendations to users on platforms like Myntra.
 
